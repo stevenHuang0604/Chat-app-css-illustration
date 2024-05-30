@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Frontend Mentor | [Challenge Name Here]</title>
+  </head>
+  <body>
+    <div class="app">
+      <div class="app__ui">
+        <div class="app__title">
+          <div class="app__back">
+            <i class="fas fa-chevron-left"></i>
+          </div>
+          <div class="app__friend">
+            <div class="app__friend-avatar">
+              <img src="./images/avatar.jpg" alt="Samuel Green Photo" />
+            </div>
+            <div class="app__friend-detail">
+              <h3 class="app__friend-name">Samuel Green</h3>
+              <p class="app__friend-status">Available to Walk</p>
+            </div>
+          </div>
+          <div class="app__more">
+            <i class="fas fa-ellipsis-v"></i>
+          </div>
+        </div>
+
+        <div class="app__chat-box">
+          <div class="chat-message chat-message--friend">That sounds great. I’d be happy with that.</div>
+          <div class="chat-message chat-message--friend">Could you send over some pictures of your dog, please?</div>
+          <div class="chat-imgs chat-imgs--user">
+            <img class="chat-message--img" src="./images/dog-image-1.jpg" alt="Dog 1" />
+            <img class="chat-message--img" src="./images/dog-image-2.jpg" alt="Dog 2" />
+            <img class="chat-message--img" src="./images/dog-image-3.jpg" alt="Dog 3" />
+          </div>
+
+          <div class="chat-message chat-message--user">Here are a few pictures. She’s a happy girl!</div>
+          <div class="chat-message chat-message--user">Can you make it?</div>
+          <div class="chat-message chat-message--friend">
+            She looks so happy! The time we discussed works. How long shall I take her out for?
+          </div>
+          <div class="chat-message chat-ads">
+            <input class="chat-ads--radio" type="radio" id="30 mins walk" />
+            <label class="chat-ads--label" for="30 mins walk">30 minute walk</label>
+            <div class="chat-ads--price">$29</div>
+          </div>
+
+          <div class="chat-message chat-ads">
+            <input class="chat-ads--radio" type="radio" id="1 hour walk" />
+            <label class="chat-ads--label" for="1 hour walk">1 hour walk</label>
+            <div class="chat-ads--price">$49</div>
+          </div>
+        </div>
+
+        <div class="chat-input">
+          <input class="chat-input--text" type="text" placeholder="Type a message…" />
+          <button class="chat--btn">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="app__overview">
+        <h1 class="app__heading">Simple booking</h1>
+        <p class="app__description">
+          Stay in touch with our dog walkers through the chat interface. This makes it easy to discuss arrangements and
+          make bookings. Once the walk has been completed you can rate your walker and book again all through the chat.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

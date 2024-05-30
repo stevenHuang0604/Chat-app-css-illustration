@@ -1,0 +1,380 @@
+:root {
+  --color-text-subheading-app-ui: hsl(276, 100%, 81%);
+  --color-text-chat-left: hsl(276, 55%, 52%);
+  --color-text-chat-right: hsl(271, 15%, 43%);
+  --color-text-placeholder: hsl(206, 6%, 79%);
+  --color-text-main-heading: hsl(271, 36%, 24%);
+  --color-text-paragraph: hsl(270, 7%, 64%);
+
+  --color-gradient-magenta: hsl(293, 100%, 63%);
+  --color-gradient-violet: hsl(264, 100%, 61%);
+
+  --color-white: hsl(0, 0%, 100%);
+
+  --color-bg-app: hsl(270, 20%, 96%);
+  --color-bg-submit-btn: hsl(271, 36%, 24%);
+  --color-bg-radio-btn: hsl(289, 100%, 72%);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  background-color: var(--color-white);
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    width: 60rem;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, var(--color-gradient-magenta), var(--color-gradient-violet));
+    border-bottom-left-radius: 1000px;
+    border-bottom-right-radius: 1000px;
+
+    position: absolute;
+    top: -15vh;
+    left: -20rem;
+  }
+
+  &::after {
+    content: '';
+    width: 60rem;
+    height: 100vh;
+    background-color: var(--color-bg-app);
+    border-top-left-radius: 1000px;
+    border-top-right-radius: 1000px;
+
+    position: absolute;
+    bottom: -15vh;
+    right: -25rem;
+  }
+}
+
+.app {
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+}
+
+/* UI */
+.app__ui {
+  justify-self: end;
+  width: 35rem;
+  background-color: var(--color-bg-app);
+  margin-right: 6rem;
+  border: 10px solid var(--color-white);
+  border-radius: 40px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.app__title {
+  padding: 4rem 2rem 2rem;
+  background-image: linear-gradient(to left, var(--color-gradient-magenta), var(--color-gradient-violet));
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 50%;
+    height: 3rem;
+    background-color: var(--color-white);
+    border-radius: 1000px;
+    z-index: 2;
+
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -30%);
+  }
+}
+
+.app__back {
+  color: var(--color-white);
+  font-size: 1.6rem;
+}
+
+.app__friend {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.app__friend-avatar {
+  border: 1px solid var(--color-white);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  & img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.app__friend-name {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: var(--color-white);
+  margin-bottom: 3px;
+}
+
+.app__friend-status {
+  font-size: 1rem;
+  color: var(--color-text-subheading-app-ui);
+}
+
+.app__more {
+  margin-left: auto;
+  color: var(--color-white);
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+/* App chat box */
+.app__chat-box {
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.chat-message {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 1rem;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.chat-message--friend {
+  max-width: 60%;
+  align-self: start;
+  color: var(--color-text-chat-left);
+  background-color: hsl(276, 55%, 95%);
+
+  border-bottom-right-radius: 10px;
+}
+
+.chat-message--user {
+  max-width: 60%;
+  align-self: end;
+  color: var(--color-text-chat-right);
+  background-color: var(--color-white);
+  border-bottom-left-radius: 10px;
+}
+
+.chat-imgs {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.chat-imgs--user {
+  justify-content: end;
+}
+
+.chat-message--img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 10px;
+}
+
+.chat-ads {
+  max-width: 75%;
+  color: var(--color-white);
+  background-image: linear-gradient(to right, var(--color-gradient-magenta), var(--color-gradient-violet));
+  border-bottom-right-radius: 10px;
+
+  display: flex;
+  align-items: center;
+}
+
+.chat-ads--radio {
+  display: none;
+}
+
+.chat-ads--label {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-left: 1.8rem;
+
+  position: relative;
+
+  &::before {
+    content: '';
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: transparent;
+    border: 0.5px solid var(--color-bg-radio-btn);
+    border-radius: 50%;
+    cursor: pointer;
+
+    position: absolute;
+    top: 50%;
+    left: -2rem;
+    transform: translateY(-50%);
+  }
+}
+
+.chat-ads--price {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-left: auto;
+}
+
+/* App chat input */
+.chat-input {
+  padding: 2rem;
+
+  position: relative;
+}
+
+.chat-input--text {
+  font-size: 1.6rem;
+  color: var(--color-text-main-heading);
+  width: 100%;
+  padding: 1.5rem 2rem;
+  border: none;
+  border-radius: 100px;
+}
+
+.chat-input--text::placeholder {
+  font-size: 1.6rem;
+  color: var(--color-text-placeholder);
+}
+
+.chat-input--text:focus {
+  outline: 1px solid var(--color-gradient-magenta);
+}
+
+.chat--btn {
+  font-size: 1.4rem;
+  width: 3rem;
+  height: 3rem;
+  color: var(--color-white);
+  background-color: var(--color-bg-submit-btn);
+  border-radius: 50%;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 50%;
+  right: 3rem;
+  transform: translate(0, -50%);
+}
+
+/* Overview */
+.app__overview {
+  margin-left: 5rem;
+}
+
+.app__heading {
+  font-size: 4rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+
+  color: var(--color-text-main-heading);
+}
+
+.app__description {
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  line-height: 1.6;
+  width: 60%;
+  color: var(--color-text-paragraph);
+}
+
+@media screen and (max-width: 1000px) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    overflow-y: scroll;
+
+    &::before {
+      top: -30vh;
+    }
+
+    &::after {
+      height: 50vh;
+      bottom: 0;
+    }
+  }
+
+  .app {
+    padding: 10rem 0 0;
+    grid-template-columns: 1fr;
+    row-gap: 10rem;
+  }
+
+  .app__ui {
+    justify-self: center;
+    margin-right: 0;
+  }
+
+  .app__overview {
+    justify-self: center;
+    text-align: center;
+    margin-left: 0;
+    width: 50%;
+    padding-bottom: 10rem;
+  }
+
+  .app__description {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 50%;
+  }
+
+  .app__overview {
+    width: 85%;
+  }
+
+  .app__heading {
+    font-size: 6.4rem;
+  }
+}
